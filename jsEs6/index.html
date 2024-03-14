@@ -21,12 +21,103 @@
 
         // `바지 ${pants} 양말 ${socks}`;
 
-        class dog {
-            constructor($type, $color) {
-                this.type = $type;
-                this.color = $color;
-            }
+        // class dog {
+        //     constructor($type, $color) {
+        //         this.type = $type;
+        //         this.color = $color;
+        //     }
+        //     한살먹기() {
+        //         if (this instanceof cat) {
+        //             this.age+=1;
+        //         } else console.error('이거나 드셔')
+        //     }
+        // }
+
+        // class cat extends dog {
+        //     constructor($type, $color, $age) {
+        //         super($type, $color);
+        //         this.age = $age;
+        //     }
+        // }
+        // var d1 = new dog("bruce", "gold");
+        // var c1 = new cat("dave", "black", 2);
+        // d1.한살먹기();
+        // c1.한살먹기();
+    
+        // class Unit {
+        //     constructor($atk, $hp) {
+        //         if (isNaN($atk)) this.atk = 5;
+        //         else this.atk = $atk;
+        //         if (isNaN($hp)) this.hp = 100;
+        //         else this.hp = $hp;
+        //     }
+        //     get battlePoint() {
+        //         return this.atk+this.hp;
+        //     }
+        //     set heal(point) {
+        //         const nPoint = Number(point);
+        //         if (isNaN(nPoint))
+        //             console.error('이거나 드셔')
+        //         else
+        //             this.hp += nPoint;
+        //     }
+        // }
+        // var g = new Unit(2, 20);
+
+
+        // var data = {
+        //     odd: [],
+        //     even: [],
+        //     set divide(arr) {
+        //         console.log(arr);
+        //         arr.forEach(a => {
+        //             if (a % 2 === 0)
+        //                 this.even.push(a);
+        //             else
+        //                 this.odd.push(a);
+        //         })
+        //     },
+        //     get sort() {
+        //         this.odd.sort();
+        //         this.even.sort();
+        //         var arr = [...this.odd, ...this.even];
+        //         arr.sort()
+        //         return arr;
+        //     }
+        // }
+
+        // data.divide = [5,4,3,2,1];
+        // data.sort;
+
+        var arr = [1,2,3,4];
+        var [a,b,c = 10] = [2,3];
+
+        var obj = { name: 'Kim', age: 20 };
+        // var name = obj.name;
+        // var age = obj.age;
+
+        // var { name = 'park', age } = { age: 30 };
+        // var obj = { name, age };
+
+        var name = 'Kim';
+        var age = 30;
+        var obj = { name:'Kim', age:30 };
+
+        function f({name,age}) {
+            console.log({name,age});
         }
+        f(obj);
+
+
+        let 신체정보 = {
+            body: {
+                height: 190,
+                weight: 70
+            },
+            size: ["상의 Large", "바지 30인치"],
+        };
+
+
 
 
     </script> 
