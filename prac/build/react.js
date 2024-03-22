@@ -21,8 +21,7 @@ export const render = function () {
     if (prevVdom === null) {
       prevVdom = nextVdom;
     }
-    // diff
-
+    // diff 비교
     container.appendChild(renderRealDOM(nextVdom));
   };
 }();
