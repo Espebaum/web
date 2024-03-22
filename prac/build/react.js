@@ -1,3 +1,4 @@
+export class Component {}
 function renderRealDOM(vdom)
 // 재귀적으로 실행됨
 {
@@ -20,13 +21,35 @@ export const render = function () {
     if (prevVdom === null) {
       prevVdom = nextVdom;
     }
+    // diff
+
     container.appendChild(renderRealDOM(nextVdom));
   };
 }();
+
+// function render() {
+// let prevVdom = null;
+// return function(nextVdom, container) {
+//     if (prevVdom === null) {
+//         prevVdom = nextVdom;
+//     }
+//     container.appendChild(renderRealDOM(nextVdom));
+// }
+// }
+
 export function createElement(tagName, props, ...children) {
   if (typeof tagName === 'function') {
     // 사용자 정의 컴포넌트 function someComponent();
-    return tagName(props, ...children);
+    if (tagName.prototype instanceof Component) {
+      // 클래스 판별
+      const instance = new tagName({
+        ...props,
+        children
+      });
+      return instance.render();
+    } else {
+      return tagName(props, ...children);
+    }
   }
   return {
     tagName,
