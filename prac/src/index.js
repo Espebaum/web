@@ -1,6 +1,15 @@
 /* @jsx createElement */
 import {createElement, render} from './react.js'
 
+class YourTitle extends Component{
+    render() {
+      return (
+        <p>나는 타이틀이 되고싶어!</p>
+      );
+    }
+  }
+  
+
 function Title() { // JSX 문법을 사용하여 작성된 React Component
     return (
         <div>

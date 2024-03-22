@@ -1,3 +1,7 @@
+export class Component {
+
+}
+
 function renderRealDOM(vdom) // 재귀적으로 실행됨
 { 
     if (typeof vdom === 'string') {
@@ -29,6 +33,16 @@ export const render = (function() {
     }
 })();
 
+// function render() {
+    // let prevVdom = null;
+    // return function(nextVdom, container) {
+    //     if (prevVdom === null) {
+    //         prevVdom = nextVdom;
+    //     }
+    //     container.appendChild(renderRealDOM(nextVdom));
+    // }
+// }
+
 export function createElement(tagName, props, ...children) {
     if (typeof tagName === 'function') {
         // 사용자 정의 컴포넌트 function someComponent();
@@ -36,3 +50,4 @@ export function createElement(tagName, props, ...children) {
     }
     return { tagName, props, children };
 }
+
