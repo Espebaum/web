@@ -46,7 +46,12 @@ export const render = (function() {
 export function createElement(tagName, props, ...children) {
     if (typeof tagName === 'function') {
         // 사용자 정의 컴포넌트 function someComponent();
-        return tagName(props, ...children)
+        if(tagName.prototype instanceof Component) { // 클래스 판별
+            const instance = new tagName({ ...props, children });
+            return instance.render();
+        } else {
+            return tagName(props, ...children)
+        }
     }
     return { tagName, props, children };
 }
